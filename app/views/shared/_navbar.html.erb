@@ -1,0 +1,15 @@
+<nav class="fixed w-full border-b-2 z-20 top-0 left-0 bg-white dark:bg-gray-900 flex justify-between">
+    <div class="flex">
+        <%#= Left Side %>
+        <%= link_to path: root_path do%>
+            <%= image_tag "book.svg", class: "h-10, w-10" %>
+        <% end %>
+    </div>
+
+    <div class="flex">
+        <%= link_to path: "#" do %>
+            <%= image_tag "account-placeholder.svg", class: "h-10 w-10" %>
+        <% end %>
+        <%#= Right Side%>
+    </div>
+</nav>
