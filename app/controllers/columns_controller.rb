@@ -28,9 +28,18 @@ class ColumnsController < ApplicationController
     def update
         @sheet = Sheet.find(params[:sheet_id])
         @column = @sheet.columns.find(params[:id])
-        @column.update!(column_params)
-        redirect_to @sheet
+        respond_to do |format|
+            if @column.update!(column_params)
+                format.turbo_stream
+            else
+                format.html { render :edit, status: :unprocessable_entity }
+            end
+            redirect_to sheet_path(@sheet)
+        end
+        
     end
+
+    private
 
     def column_params
         params.require(:column).permit(:title, :data_type)

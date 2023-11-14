@@ -37,17 +37,17 @@ class SheetsController < ApplicationController
   # PATCH/PUT /sheets/1 or /sheets/1.json
   def update
     respond_to do |format|
-      if @sheet.update(sheet_params)
+      if @sheet.update!(sheet_params)
+        format.turbo_stream {}
         format.html { redirect_to sheet_url(@sheet), notice: "Sheet was successfully updated." }
         format.json { render :show, status: :ok, location: @sheet }
-        format.turbo_stream {}
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @sheet.errors, status: :unprocessable_entity }
         format.turbo_stream {}
       end
     end
-    redirect_to sheet_path(@sheet)
+    redirect_to @sheet
   end
 
   # DELETE /sheets/1 or /sheets/1.json
