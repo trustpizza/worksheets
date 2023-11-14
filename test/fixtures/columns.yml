@@ -2,10 +2,10 @@
 
 one:
   title: MyString
-  type: 
-  sheets: one
+  data_type: MyString
+  sheet: one
 
 two:
   title: MyString
-  type: 
-  sheets: two
+  data_type: MyString
+  sheet: two

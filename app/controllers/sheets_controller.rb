@@ -17,6 +17,10 @@ class SheetsController < ApplicationController
 
   # GET /sheets/1/edit
   def edit
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   # POST /sheets or /sheets.json
@@ -27,9 +31,11 @@ class SheetsController < ApplicationController
       if @sheet.save
         format.html { redirect_to sheet_url(@sheet), notice: "Sheet was successfully created." }
         format.json { render :show, status: :created, location: @sheet }
+        format.turbo_stream
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @sheet.errors, status: :unprocessable_entity }
+        format.turbo_stream
       end
     end
   end
