@@ -1,7 +1,9 @@
 <% if action_name == "show" %>
   <div id="<%= dom_id sheet %>" class="w-full mx-auto py-4">
     <div class="overflow-x-auto">
-      <h1><%= @sheet.title %> </h1>
+      <h1 class="text-4xl font-extrabold text-center">
+        <%= @sheet.title %>
+      </h1>
       <%#= link_to 'Edit Sheet', edit_sheet_path(@sheet), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 
       <table class="min-w-full border-collapse table-auto">
