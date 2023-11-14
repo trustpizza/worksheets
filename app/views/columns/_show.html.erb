@@ -1,7 +1,7 @@
+
 <th class="py-3 px-4 border-r border-gray-200">
-    <%= column.title %>
     <%= turbo_frame_tag column do %>
+        <%= column.title %>
         <%= link_to 'Edit Column', edit_sheet_column_path(@sheet, column) %> 
     <% end %>
-    <%#= button_to "Delete", sheet_column_path(@sheet, column), method: :delete%>
 </th>
