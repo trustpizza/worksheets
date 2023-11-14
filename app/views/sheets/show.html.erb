@@ -4,9 +4,15 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <%= turbo_frame_tag @sheet do %>
-      <%= render @sheet %>
-      <%= link_to "Edit Sheet", edit_sheet_path(@sheet)%>
-    <% end %>
+    <%= render @sheet %>
+
+    <%#= render partial: 'columns/add_column', sheet: @sheet %>
+
+    <%= link_to "Edit Sheet this sheet", edit_sheet_path(@sheet), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to "Destroy this sheet", sheet_path(@sheet), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+    <%= link_to "Back to sheets", sheets_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
 </div>
 C
