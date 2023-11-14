@@ -8,11 +8,13 @@
 
     <%#= render partial: 'columns/add_column', sheet: @sheet %>
 
-    <%= link_to "Edit Sheet this sheet", edit_sheet_path(@sheet), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= turbo_frame_tag @sheet do %>
+      <%= link_to 'Edit Sheet', edit_sheet_path(@sheet), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <% end %>
+
     <div class="inline-block ml-2">
       <%= button_to "Destroy this sheet", sheet_path(@sheet), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
     <%= link_to "Back to sheets", sheets_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 </div>
-C

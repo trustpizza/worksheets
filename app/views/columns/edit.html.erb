@@ -1,0 +1,10 @@
+<%= turbo_frame_tag @column do %>
+    <%= render "columns/form", sheet: @sheet %>
+<% end %>
+<%#= link_to "Show this sheet", @sheet, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+<%#= link_to "Back to sheets", sheets_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+<%#= turbo_frame_tag column do %>
+<%#= render 'form', sheet: @sheet, column: @column %>
+<%#= link_to 'form', edit_sheet_column_path %>
+<%# end %>
