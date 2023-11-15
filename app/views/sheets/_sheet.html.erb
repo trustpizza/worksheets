@@ -11,7 +11,9 @@
         <thead>
           <tr class="border-b border-gray-200 bg-gray-100">
             <% sheet.columns.each do |column| %>
-              <%= render "columns/show", column: column, sheet: @sheet %>
+              <th class="py-3 px-4 border-r border-gray-200">
+                <%= render "columns/show", column: column, sheet: @sheet %>
+              </th>
             <% end %>
           </tr>
         </thead>

@@ -1,12 +1,10 @@
 
-<th class="py-3 px-4 border-r border-gray-200">
-    <%= turbo_frame_tag column, class: "flex items-center justify-apart cursor-pointer" do %>
-        <div class="truncate">
-            <%= column.title %>
-        </div>
+<%= turbo_frame_tag column, class: "flex items-center justify-between cursor-pointer" do %>
+    <div class="truncate">
+        <%= column.title %>
+    </div>
 
-        <%= link_to edit_sheet_column_path(@sheet, column) do %>
-            <%= image_tag 'dots-vertical.svg', class: "w-6 h-6" %>
-        <% end %>
+    <%= link_to edit_sheet_column_path(@sheet, column) do %>
+        <%= image_tag 'dots-vertical.svg', class: "w-6 h-6" %>
     <% end %>
-</th>
+<% end %>

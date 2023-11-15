@@ -1,5 +1,3 @@
-<%= turbo_frame_tag @column do %>
+<%= turbo_frame_tag @column, class: "flex" do %>
     <%= render "form", sheet: @sheet %>
 <% end %>
-<%#= render 'form', sheet: @sheet %>
-<%#= link_to 'Return to Sheet', sheet_path(@sheet) %>
