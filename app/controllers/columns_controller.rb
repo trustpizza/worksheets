@@ -1,5 +1,10 @@
 class ColumnsController < ApplicationController
 
+    def new
+        @sheet = Sheet.find(params[:sheet_id])
+        @column = Column.new
+    end
+
     def create
         @sheet = Sheet.find(params[:sheet_id])
         @column = @sheet.columns.create(column_params)

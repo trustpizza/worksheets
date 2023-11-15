@@ -15,6 +15,9 @@
                 <%= render "columns/show", column: column, sheet: @sheet %>
               </th>
             <% end %>
+            <th>
+              <%= link_to "Add Column", new_sheet_column_path(@sheet) %>
+            </th>
           </tr>
         </thead>
         <!-- Table Body -->
